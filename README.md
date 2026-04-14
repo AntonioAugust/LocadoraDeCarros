@@ -7,6 +7,15 @@ Uma solução desenvolvida em **Java** para controle de fluxo de clientes, gest�
 
 ---
 
+
+## 👥 Integrantes do Projeto
+
+* **Antonio Augusto**
+* **Artur Antunes** 
+* **Eduardo Liscano Guerra**
+* **Julielen Arnoud Dorneles**
+---
+
 ## ⚙️ Funcionalidades do Sistema
 
 O sistema foi estruturado para oferecer um gerenciamento centralizado em três pilares principais:
@@ -35,15 +44,6 @@ O sistema foi estruturado para oferecer um gerenciamento centralizado em três p
 * **Paradigma:** Orientação a Objetos (POO)
 Uso de Herança, Polimorfismo e Interface
 * **Interface:** Terminal / CLI
-
----
-
-## 👥 Integrantes do Projeto
-
-* **Antonio Augusto**
-* **Artur Antunes** 
-* **Eduardo Liscano Guerra**
-* **Julielen Arnoud Dorneles**
 
 ---
 

@@ -23,6 +23,7 @@ public class Venda {
         return idVenda;
     }
 
+
     @Override  //sobrescreve o metodo toString() chamado na funcao de printar (system.out.print(toString()))
     public String toString(){
         return "Id_Venda = "+ idVenda +"\nVeiculo = "+veiculo+"\nCliente = "+cliente+"\nData = "+data+"\nValorFinal = "+valorFinal+"\nFormaPagamento = "+formaPagamento+"\n ";

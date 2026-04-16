@@ -1,4 +1,5 @@
 package locadoraDeCarros;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -10,7 +11,7 @@ public class ControleVendas {
     /*public ControleVendas(){
     }
     */
-    public void adicionarVenda(Veiculo veiculo, Cliente cliente, Double valorFinal, String formaPagamento, Date data){
+    public void adicionarVenda(Veiculo veiculo, Cliente cliente, Double valorFinal, String formaPagamento, LocalDate data){
         numeroTotalVendas++;
         listaVendas.add(new Venda(veiculo, cliente, valorFinal, formaPagamento, data, numeroTotalVendas));
 
@@ -31,6 +32,14 @@ public class ControleVendas {
             if(v.getIdVenda() == idVenda){
                 System.out.println(v);
                 return;
+            }
+        }
+    }
+    //sobrecarga de funcao
+    public void verVenda(LocalDate date){
+        for(Venda v : listaVendas){
+            if(date.isEqual(v.getDate())){
+                System.out.println(v);
             }
         }
     }

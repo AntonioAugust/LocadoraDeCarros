@@ -5,6 +5,12 @@ public class Cliente {
     private String nome;
     private String endereco;
 
+    public Cliente(int cpf, java.lang.String nome, java.lang.String endereco){
+        this.cpf = cpf;
+        this.nome = nome;
+        this.endereco=endereco;
+    }
+
     public int getCpf(){
         return cpf;
     }

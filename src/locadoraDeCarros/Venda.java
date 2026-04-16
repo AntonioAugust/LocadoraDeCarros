@@ -1,16 +1,17 @@
 package locadoraDeCarros;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Venda {
     private int idVenda;
-    private Date data;
+    private LocalDate data;
     private Veiculo veiculo;
     private Cliente cliente;
     private Double valorFinal;
     private String formaPagamento;
 
-    public Venda(Veiculo veiculo, Cliente cliente, Double valorFinal, String formaPagamento, Date data, int idVenda){
+    public Venda(Veiculo veiculo, Cliente cliente, Double valorFinal, String formaPagamento, LocalDate data, int idVenda){
         this.idVenda = idVenda;
         this.data = data;
         this.veiculo = veiculo;
@@ -21,6 +22,10 @@ public class Venda {
 
     public int getIdVenda(){
         return idVenda;
+    }
+
+    public LocalDate getDate(){
+        return data;
     }
 
 

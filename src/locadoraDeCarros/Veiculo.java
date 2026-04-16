@@ -10,6 +10,15 @@ public class Veiculo {
     private double preco;
     private String cor;
 
+    public Veiculo(java.lang.String marca, java.lang.String modelo, int anoFabricacao, java.lang.String placa, double preco, java.lang.String cor){
+        this.marca= marca;
+        this.modelo = modelo;
+        this.anoFabricacao = anoFabricacao;
+        this.placa = placa;
+        this.preco = preco;
+        this.cor = cor;
+    }
+
     public String getMarca(){
         return marca;
     }

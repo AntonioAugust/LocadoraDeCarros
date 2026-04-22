@@ -2,15 +2,17 @@ package locadoraDeCarros;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Veiculo {
+public abstract class Veiculo implements locadoraDeCarros.Comercializavel {
+    protected String exibirDados;
     private String marca;
     private String modelo;
     private int anoFabricacao;
     private String placa;
     private double preco;
     private String cor;
+    private boolean disponivel;
 
-    public Veiculo(java.lang.String marca, java.lang.String modelo, int anoFabricacao, java.lang.String placa, double preco, java.lang.String cor){
+    public Veiculo(String marca, String modelo, int anoFabricacao, String placa, double preco, String cor) {
         this.marca= marca;
         this.modelo = modelo;
         this.anoFabricacao = anoFabricacao;
@@ -18,6 +20,29 @@ public class Veiculo {
         this.preco = preco;
         this.cor = cor;
     }
+
+    public String exibirDados () {
+        String situacao = disponivel ? "Disponivel" : "Vendido";
+
+        return "Marca: " + marca +
+                "\nModelo:" + modelo +
+                "\nAno de fabricação: " + anoFabricacao +
+                "\nPlaca: " + placa +
+                "\nCor: " + cor +
+                "\nPreço base: R$ " + preco +
+                "\nSituação: " + situacao;
+     }
+
+     public void vender() {
+        if (disponivel) {
+            disponivel = false;
+            System.out.println("Venda realizda com sucesso!");
+        }else {
+            System.out.println("esse veículo já foi vendido");
+        }
+     }
+
+     public abstract double calcularValorFinal();
 
     public String getMarca(){
         return marca;

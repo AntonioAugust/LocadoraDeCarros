@@ -4,6 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
 
+        // ================================
+        // CRIANDO CLIENTE
+        // ================================
         Cliente cliente1 = new Cliente(123456789, "João", "Rua A", 150000);
 
         System.out.println("======================================");
@@ -18,6 +21,9 @@ public class Main {
         System.out.println("Dinheiro após operações: " + cliente1.getCarteira().getDinheiro());
         System.out.println();
 
+        // ================================
+        // TESTE DE HERANÇA
+        // ================================
         System.out.println("======================================");
         System.out.println("          TESTE DE HERANCA");
         System.out.println("======================================");
@@ -33,6 +39,9 @@ public class Main {
         System.out.println(moto1.exibirDados());
         System.out.println();
 
+        // ================================
+        // TESTE DE POLIMORFISMO
+        // ================================
         System.out.println("======================================");
         System.out.println("        TESTE DE POLIMORFISMO");
         System.out.println("======================================");
@@ -44,6 +53,9 @@ public class Main {
         System.out.println("Veiculo 2 - valor final: R$ " + veiculo2.calcularValorFinal());
         System.out.println();
 
+        // ================================
+        // TESTE DA INTERFACE
+        // ================================
         System.out.println("======================================");
         System.out.println("   TESTE DA INTERFACE COMERCIALIZAVEL");
         System.out.println("======================================");
@@ -55,6 +67,9 @@ public class Main {
         System.out.println("Dinheiro do cliente após compra: " + cliente1.getCarteira().getDinheiro());
         System.out.println();
 
+        // ================================
+        // TESTE DE VENDA
+        // ================================
         System.out.println("======================================");
         System.out.println("           TESTE DE VENDA");
         System.out.println("======================================");

@@ -18,6 +18,17 @@ public abstract class Veiculo implements Comercializavel {
     private String cor;
     private boolean disponivel;
 
+    /**
+     * Construtor da classe veículo
+     * Esse cosntrutor é usador pelas classes filhas, carro e moto
+     * Sempre que um veículo novo é criado, ele começa disponível no estoque
+     * @param marca marca do veiculo
+     * @param modelo modelo do veiculo
+     * @param anoFabricacao ano de fabricacao do veiculo
+     * @param placa placa do veiculo
+     * @param preco preco base do veiculo
+     * @param cor cor de veiculo
+     */
     public Veiculo(String marca, String modelo, int anoFabricacao, String placa, double preco, String cor) {
         this.marca= marca;
         this.modelo = modelo;
@@ -27,6 +38,12 @@ public abstract class Veiculo implements Comercializavel {
         this.cor = cor;
         this.disponivel= true;
     }
+
+    /**
+     * As classes filhas podem usar esse metodo e acrescentar suas proprias informacoes,
+     * como quantidade de portas ou cilindradas
+     * @return informações do veículo em formato de texto
+     */
 
     public String exibirDados () {
         String situacao = disponivel ? "Disponivel" : "Vendido";

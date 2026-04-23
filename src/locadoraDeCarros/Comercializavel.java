@@ -19,7 +19,7 @@ public interface Comercializavel{
     /**
      * Realiza a venda do veículo
      */
-    void vender();
+    public void vender(Cliente cliente);
 
 
 

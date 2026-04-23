@@ -63,15 +63,22 @@ public abstract class Veiculo implements Comercializavel {
      * altera novamente a situação dele.
      */
     @Override
-    public void vender() {
-        if (disponivel) {
+    public void vender(Cliente cliente) {
+        if (!disponivel) {
+            System.out.println("Esse veículo já foi vendido");
+            return;
+        }
+
+        double valorFinal = calcularValorFinal();
+
+        if (cliente.getCarteira().getDinheiro() >= valorFinal) {
+            cliente.getCarteira().Remover(valorFinal);
             disponivel = false;
             System.out.println("Venda realizada com sucesso!");
-        }else {
-            System.out.println("Esse veículo já foi vendido");
+        } else {
+            System.out.println("Cliente não possui dinheiro suficiente");
         }
-     }
-
+    }
     /**
      * Calcula o valor final do veículo.
      * Esse meodo fica sem implementação aqui porque cada tipo de veículo

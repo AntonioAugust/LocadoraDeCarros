@@ -1,32 +1,29 @@
 package locadoraDeCarros;
 
-/**
- * Classe principal do sistema.
- * Aqui eu faço alguns testes para verificar se as classes
- * estao funcionando corretamente.
- */
 public class Main {
 
-    /**
-     * Metodo principal do programa.
-     * Aqui eu testo a carteira, a heranca, o polimorfismo,
-     * a interface e a venda de veiculos.
-     *
-     * @param args argumentos do programa
-     */
     public static void main(String[] args) {
+
+        // ================================
+        // CRIANDO CLIENTE
+        // ================================
+        Cliente cliente1 = new Cliente(123456789, "João", "Rua A", 150000);
 
         System.out.println("======================================");
         System.out.println("         TESTE DA CARTEIRA");
         System.out.println("======================================");
 
-        Carteira minhaCarteira = new Carteira();
-        minhaCarteira.Depositar(100);
-        minhaCarteira.Remover(50);
+        System.out.println("Dinheiro inicial do cliente: " + cliente1.getCarteira().getDinheiro());
 
-        System.out.println("Quantidade de dinheiro disponivel: " + minhaCarteira.getDinheiro());
+        cliente1.getCarteira().Depositar(100);
+        cliente1.getCarteira().Remover(50);
+
+        System.out.println("Dinheiro após operações: " + cliente1.getCarteira().getDinheiro());
         System.out.println();
 
+        // ================================
+        // TESTE DE HERANÇA
+        // ================================
         System.out.println("======================================");
         System.out.println("          TESTE DE HERANCA");
         System.out.println("======================================");
@@ -42,6 +39,9 @@ public class Main {
         System.out.println(moto1.exibirDados());
         System.out.println();
 
+        // ================================
+        // TESTE DE POLIMORFISMO
+        // ================================
         System.out.println("======================================");
         System.out.println("        TESTE DE POLIMORFISMO");
         System.out.println("======================================");
@@ -53,26 +53,38 @@ public class Main {
         System.out.println("Veiculo 2 - valor final: R$ " + veiculo2.calcularValorFinal());
         System.out.println();
 
+        // ================================
+        // TESTE DA INTERFACE
+        // ================================
         System.out.println("======================================");
         System.out.println("   TESTE DA INTERFACE COMERCIALIZAVEL");
         System.out.println("======================================");
 
-        System.out.println("Aqui eu crio um carro, mas trato ele como Comercializavel.");
         Comercializavel item = new Carro("Chevrolet", "Onix", 2020, "JKL-1111", 70000, "Preto", 4);
 
         System.out.println("Valor final para venda: R$ " + item.calcularValorFinal());
-        item.vender();
+        item.vender(cliente1);
+        System.out.println("Dinheiro do cliente após compra: " + cliente1.getCarteira().getDinheiro());
         System.out.println();
 
+        // ================================
+        // TESTE DE VENDA
+        // ================================
         System.out.println("======================================");
         System.out.println("           TESTE DE VENDA");
         System.out.println("======================================");
+
+        System.out.println("Dinheiro antes da compra: " + cliente1.getCarteira().getDinheiro());
+        System.out.println();
 
         System.out.println("---------- ANTES DA VENDA ----------");
         System.out.println(carro1.exibirDados());
         System.out.println();
 
-        carro1.vender();
+        carro1.vender(cliente1);
+        System.out.println();
+
+        System.out.println("Dinheiro depois da compra: " + cliente1.getCarteira().getDinheiro());
         System.out.println();
 
         System.out.println("---------- DEPOIS DA VENDA ---------");

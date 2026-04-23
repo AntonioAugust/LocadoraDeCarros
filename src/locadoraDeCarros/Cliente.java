@@ -4,12 +4,20 @@ public class Cliente {
     private int cpf;
     private String nome;
     private String endereco;
+    private Carteira carteira; // 👈 nova associação
 
-    public Cliente(int cpf, java.lang.String nome, java.lang.String endereco){
+    public Cliente(int cpf, String nome, String endereco, double dinheiroInicial){
         this.cpf = cpf;
         this.nome = nome;
-        this.endereco=endereco;
+        this.endereco = endereco;
+        this.carteira = new Carteira();
+        this.carteira.Depositar(dinheiroInicial);
     }
+
+    public Carteira getCarteira(){
+        return carteira;
+    }
+
 
     public int getCpf(){
         return cpf;

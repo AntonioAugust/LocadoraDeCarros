@@ -28,7 +28,7 @@ public class Moto extends Veiculo {
     public String exibirDados() {
         return super.exibirDados() +
                 "\nTipo: Moto" +
-                "\nCilindradas: " + cilindradas +
+                "\nCilindradas: " + getCilindradas() +
                 "\nValor final: R$ " + calcularValorFinal();
     }
     public int getCilindradas() {

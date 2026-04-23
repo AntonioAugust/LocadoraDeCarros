@@ -6,18 +6,13 @@ public class Cliente {
     private String endereco;
     private Carteira carteira; // 👈 nova associação
 
-    public Cliente(int cpf, String nome, String endereco, double dinheiroInicial){
-        this.cpf = cpf;
-        this.nome = nome;
-        this.endereco = endereco;
-        this.carteira = new Carteira();
-        this.carteira.Depositar(dinheiroInicial);
+    public void setCarteira(Carteira carteira){
+        this.carteira = carteira;
     }
 
     public Carteira getCarteira(){
         return carteira;
     }
-
 
     public int getCpf(){
         return cpf;
@@ -41,5 +36,17 @@ public class Cliente {
 
     public void setEndereco(String endereco){
         this.endereco = endereco;
+    }
+
+    public Cliente(int cpf, String nome, String endereco, Carteira carteira, double dinheiroInicial){
+        setCpf(cpf);
+        setNome(nome);
+        setEndereco(endereco);
+        setCarteira(carteira);
+        carteira.Depositar(dinheiroInicial);
+    }
+
+    public void mostarInfoCliente(){
+        System.out.println("------ INFORMAÇÕES DO CLIENTE ------\nNome: " + getNome() + "\nEndereço: " + getEndereco() + "\nCPF: " + getCpf() +"\nSaldo atual: " + carteira.getDinheiro());
     }
 }

@@ -1,10 +1,13 @@
 package locadoraDeCarros;
 
 public class Main {
-
-    public static void main(String[] args) {
-
-        Cliente cliente1 = new Cliente(123456789, "João", "Rua A", 150000);
+    public static void main() {
+        System.out.println("======================================");
+        System.out.println("         TESTE CLIENTE");
+        System.out.println("======================================");
+        Cliente cliente1 = new Cliente(123456789, "João", "Rua A", new Carteira(), 150000);
+        cliente1.mostarInfoCliente();
+        System.out.println();
 
         System.out.println("======================================");
         System.out.println("         TESTE DA CARTEIRA");
@@ -51,6 +54,7 @@ public class Main {
         Comercializavel item = new Carro("Chevrolet", "Onix", 2020, "JKL-1111", 70000, "Preto", 4);
 
         System.out.println("Valor final para venda: R$ " + item.calcularValorFinal());
+        System.out.println("Dinheiro antes da compra: " + cliente1.getCarteira().getDinheiro());
         item.vender(cliente1);
         System.out.println("Dinheiro do cliente após compra: " + cliente1.getCarteira().getDinheiro());
         System.out.println();

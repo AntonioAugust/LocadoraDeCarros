@@ -19,24 +19,24 @@ public abstract class Veiculo implements Comercializavel {
     private boolean disponivel;
 
     public Veiculo(String marca, String modelo, int anoFabricacao, String placa, double preco, String cor) {
-        this.marca= marca;
-        this.modelo = modelo;
-        this.anoFabricacao = anoFabricacao;
-        this.placa = placa;
-        this.preco = preco;
-        this.cor = cor;
+        setMarca(marca);
+        setModelo(modelo);
+        setAnoFabricacao(anoFabricacao);
+        setPlaca(placa);
+        setPreco(preco);
+        setCor(cor);
         this.disponivel= true;
     }
 
     public String exibirDados () {
         String situacao = disponivel ? "Disponivel" : "Vendido";
 
-        return "Marca: " + marca +
-                "\nModelo:" + modelo +
-                "\nAno de fabricação: " + anoFabricacao +
-                "\nPlaca: " + placa +
-                "\nCor: " + cor +
-                "\nPreço base: R$ " + preco +
+        return "Marca: " + getMarca() +
+                "\nModelo: " + getModelo() +
+                "\nAno de fabricação: " + getAnoFabricacao() +
+                "\nPlaca: " + getPlaca() +
+                "\nCor: " + getCor() +
+                "\nPreço base: R$ " + getPreco() +
                 "\nSituação: " + situacao;
      }
 

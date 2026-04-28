@@ -6,39 +6,45 @@ import java.util.Date;
 public class Venda {
     private int idVenda;
     private LocalDate data;
-    private Veiculo veiculo;
-    private Cliente cliente;
-    private Double valorFinal;
+    private final Double valorFinal;
     private String formaPagamento;
 
-    public Venda(Veiculo veiculo, Cliente cliente, Double valorFinal, String formaPagamento, LocalDate data, int idVenda){
+    // Snapshots (Strings que não mudam mais)
+    private String snapshotVeiculo;
+    private String snapshotCliente;
+
+    public Venda(int idVenda, Cliente cliente, Veiculo veiculo, String formaPagamento) {
         this.idVenda = idVenda;
-        this.data = data;
-        this.veiculo = veiculo;
-        this.cliente = cliente;
-        this.valorFinal = valorFinal;
         this.formaPagamento = formaPagamento;
+        this.data = LocalDate.now();
+
+        this.valorFinal = veiculo.calcularValorFinal();
+
+        this.snapshotVeiculo = veiculo.toString();
+
+        this.snapshotCliente = String.format("ID: %d | Nome: %s | CPF: %s",
+                cliente.getIdCliente(),
+                cliente.getNomeCompleto(),
+                cliente.getCpf());
     }
 
-    public int getIdVenda(){
+    @Override
+    public String toString() {
+        return "--- RECIBO DE VENDA #" + idVenda + " ---" +
+                "\nData: " + data +
+                "\nCliente: " + snapshotCliente +
+                "\nVeículo: " + snapshotVeiculo +
+                "\nValor Pago: R$ " + String.format("%.2f", valorFinal) +
+                "\nForma de Pagamento: " + formaPagamento +
+                "\n----------------------------";
+    }
+
+    public int getIdVenda() {
         return idVenda;
     }
 
-    public LocalDate getDate(){
+    public LocalDate getDate() {
         return data;
     }
-
-
-    @Override  //sobrescreve o metodo toString() chamado na funcao de printar (system.out.print(toString()))
-    public String toString(){
-        return "Id_Venda = "+ idVenda +"\nVeiculo = "+veiculo+"\nCliente = "+cliente+"\nData = "+data+"\nValorFinal = "+valorFinal+"\nFormaPagamento = "+formaPagamento+"\n ";
-
-
-
-
-
-    }
-
-
 
 }

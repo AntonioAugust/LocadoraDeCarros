@@ -4,27 +4,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ControleVendas {
-    private int numeroTotalVendas=0;
-    private List<Venda> listaVendas = new ArrayList<>();
+    private int proximoId;
+    private List<Venda> listaVendas;
+    private controleEstoque estoque;
 
-    /*public ControleVendas(){
-    }
-    */
-    public void adicionarVenda(Veiculo veiculo, Cliente cliente, Double valorFinal, String formaPagamento, LocalDate data){
-        numeroTotalVendas++;
-        listaVendas.add(new Venda(veiculo, cliente, valorFinal, formaPagamento, data, numeroTotalVendas));
-
+    public ControleVendas(controleEstoque estoque){
+        listaVendas = new ArrayList<>();
+        this.estoque = estoque;
+        proximoId = 1;
     }
 
-    public void removerVenda(int idVenda) {
-        for (Venda v : listaVendas) {
-            if (listaVendas.isEmpty()) return;
-            if (v.getIdVenda() == idVenda) {
-                System.out.println(v);
-                return;
-            }
+    public void adicionarVenda(Cliente cliente, Veiculo veiculo, String formaPagamento){
+
+        Veiculo veiculoRemov = estoque.removerVeiculo(veiculo.getIdVeiculo());
+        if (veiculoRemov == null) {
+            System.out.println("ERRO: Veículo com ID " + veiculo.getIdVeiculo() + " não encontrado no estoque!");
+            return;
         }
+
+        double valorVenda = veiculo.calcularValorFinal();
+
+        if(cliente.getCarteira().getDinheiro() < valorVenda){
+            System.out.println("ERRO: Saldo insuficiente! Saldo: " + cliente.getCarteira().getDinheiro() + " | Necessário: " + valorVenda);
+
+            //Se não tem dinheiro devolvemos o carro para o estoque
+            estoque.addVeiculo(veiculoRemov);
+            return;
+        }
+
+        cliente.getCarteira().Remover(valorVenda);
+
+        Venda novaVenda = new Venda(proximoId++, cliente, veiculo, formaPagamento);
+        listaVendas.add(novaVenda);
+
     }
+
 
     public void verVenda(int idVenda){
         for(Venda v : listaVendas){
@@ -39,6 +53,7 @@ public class ControleVendas {
         for(Venda v : listaVendas){
             if(date.isEqual(v.getDate())){
                 System.out.println(v);
+
             }
         }
     }

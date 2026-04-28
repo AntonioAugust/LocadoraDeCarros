@@ -22,8 +22,8 @@ public class Carro extends Veiculo {
      * @param cor cor do carro
      * @param quantidadePortas quantidade de portas do carro
      */
-    public Carro(int idVeiculo, String marca, String modelo, LocalDate anoFabricacao, String placa, String cor, int quantidadePortas, double precoBase) {
-        super(idVeiculo, marca, modelo, placa, cor, anoFabricacao, precoBase);
+    public Carro(String marca, String modelo, LocalDate anoFabricacao, String placa, String cor, int quantidadePortas, double precoBase) {
+        super(marca, modelo, placa, cor, anoFabricacao, precoBase);
         this.quantidadePortas = quantidadePortas;
     }
 
@@ -44,19 +44,9 @@ public class Carro extends Veiculo {
         return "Carro";
     }
 
-    /**
-     * Mostra os dados completos do carro.
-     * Primeiro sao exibidas as informacoes gerais do veiculo e depois
-     * as informacoes especificas do carro.
-     *
-     * @return dados completos do carro
-     */
     @Override
-    public String exibirDados() {
-        return super.exibirDados() +
-                "\nTipo: Carro" +
-                "\nQuantidade de portas: " + quantidadePortas +
-                "\nValor final: R$ " + calcularValorFinal();
+    public String toString() {
+        return super.toString() + String.format(" | Portas: %d", quantidadePortas);
     }
 
     public int getQuantidadePortas() {

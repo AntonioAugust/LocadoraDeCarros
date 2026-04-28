@@ -6,11 +6,6 @@ package locadoraDeCarros;
  */
 public class Carteira {
     private double dinheiro;
-    /**
-     * Adiciona dinheiro na carteira.
-     *
-     * @param quantidade valor que sera depositado na carteira
-     */
 
 
     public Carteira(double dinheiroInicial){

@@ -31,6 +31,13 @@ public class controleClientes {
         }
     }
 
+    public Cliente getCliente(int id) {
+        for (Cliente c : controleClientes) {
+            if (c.getIdCliente() == id) return c;
+        }
+        return null;
+    }
+
 
     public void verCliente(int idCliente){
         for(Cliente v : controleClientes){

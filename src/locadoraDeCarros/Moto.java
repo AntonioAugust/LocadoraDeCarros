@@ -20,8 +20,8 @@ public class Moto extends Veiculo {
      * @param cor cor da moto
      * @param cilindradas quantidade de cilindradas da moto
      */
-    public Moto(int idVeiculo, String marca, String modelo, LocalDate anoFabricacao, String placa, double precoBase, String cor, int cilindradas) {
-        super(idVeiculo, marca, modelo, placa, cor, anoFabricacao, precoBase);
+    public Moto(String marca, String modelo, LocalDate anoFabricacao, String placa, double precoBase, String cor, int cilindradas) {
+        super(marca, modelo, placa, cor, anoFabricacao, precoBase);
         this.cilindradas = cilindradas;
     }
 
@@ -40,22 +40,12 @@ public class Moto extends Veiculo {
         return "Moto";
     }
 
-
-
-
-    /**
-     * Mostra os dados completos da moto.
-     * Reaproveitamos as informações gerais da classe Veiculo e acrescentamos
-     * as cilindradas, que são uma característica específica da moto.
-     * @return texto com os dados completos da moto
-     */
     @Override
-    public String exibirDados() {
-        return super.exibirDados() +
-                "\nTipo: Moto" +
-                "\nCilindradas: " + getCilindradas() +
-                "\nValor final: R$ " + calcularValorFinal();
+    public String toString() {
+        // Usamos o super.toString() para pegar a parte comum e adicionamos o específico
+        return super.toString() + String.format(" | Cilindradas: %dcc", cilindradas);
     }
+
     public int getCilindradas() {
         return cilindradas;
     }

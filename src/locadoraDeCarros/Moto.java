@@ -1,5 +1,7 @@
 package locadoraDeCarros;
 
+import java.time.LocalDate;
+
 /**
  * Classe que representa uma moto dentro do estoque.
  * Assim como o carro, a moto tambem herda da classe Veiculo.
@@ -14,12 +16,12 @@ public class Moto extends Veiculo {
      * @param modelo modelo da moto
      * @param anoFabricacao ano de fabricacao da moto
      * @param placa placa da moto
-     * @param preco preco base da moto
+
      * @param cor cor da moto
      * @param cilindradas quantidade de cilindradas da moto
      */
-    public Moto(String marca, String modelo, int anoFabricacao, String placa, double preco, String cor, int cilindradas) {
-        super(marca, modelo, anoFabricacao, placa, preco, cor);
+    public Moto(int idVeiculo, String marca, String modelo, LocalDate anoFabricacao, String placa, double precoBase, String cor, int cilindradas) {
+        super(idVeiculo, marca, modelo, placa, cor, anoFabricacao, precoBase);
         this.cilindradas = cilindradas;
     }
 
@@ -32,6 +34,14 @@ public class Moto extends Veiculo {
     public double calcularValorFinal() {
         return getPreco() + (getPreco()* 0.03);
     }
+
+    @Override
+    public String getTipo(){
+        return "Moto";
+    }
+
+
+
 
     /**
      * Mostra os dados completos da moto.

@@ -14,13 +14,5 @@ public interface Comercializavel{
      */
     double calcularValorFinal();
 
-    /**
-     * Realiza a venda do veiculo para um cliente.
-     *
-     * @param cliente cliente que esta comprando o veiculo
-     */
-    public void vender(Cliente cliente);
-
-
 
 }

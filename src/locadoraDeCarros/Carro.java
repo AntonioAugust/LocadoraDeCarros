@@ -1,5 +1,7 @@
 package locadoraDeCarros;
 
+import java.time.LocalDate;
+
 /**
  * Classe que representa um carro dentro do estoque.
  * Ela herda da classe Veiculo, então ja possui placa, marca, modelo,
@@ -16,12 +18,12 @@ public class Carro extends Veiculo {
      * @param modelo modelo do carro
      * @param anoFabricacao ano de fabricacao do carro
      * @param placa placa do carro
-     * @param preco preco base do carro
+
      * @param cor cor do carro
      * @param quantidadePortas quantidade de portas do carro
      */
-    public Carro(String marca, String modelo, int anoFabricacao, String placa, double preco, String cor, int quantidadePortas) {
-        super(marca, modelo, anoFabricacao, placa, preco, cor);
+    public Carro(int idVeiculo, String marca, String modelo, LocalDate anoFabricacao, String placa, String cor, int quantidadePortas, double precoBase) {
+        super(idVeiculo, marca, modelo, placa, cor, anoFabricacao, precoBase);
         this.quantidadePortas = quantidadePortas;
     }
 
@@ -35,6 +37,11 @@ public class Carro extends Veiculo {
     @Override
     public double calcularValorFinal() {
         return getPreco() + (getPreco() * 0.05);
+    }
+
+    @Override
+    public String getTipo(){
+        return "Carro";
     }
 
     /**

@@ -3,55 +3,94 @@
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
 
-Uma aplicação desenvolvida em Java para auxiliar no controle de veículos, clientes e operações básicas de uma concessionária.
+Uma aplicação desenvolvida em Java para auxiliar no controle de clientes, estoque e vendas em uma concessionária.
 
 ---
 
 ## 👥 Integrantes do Projeto
 
-* **Antonio Augusto**
-* **Artur Antunes** 
-* **Eduardo Liscano Guerra**
-* **Julielen Dorneles**
+- **Antonio Augusto**
+- **Artur Antunes**
+- **Eduardo Liscano Guerra**
+- **Julielen Dorneles**
+
 ---
 
 ## ⚙️ Funcionalidades do Sistema
 
-### Gestao Financeira
-- Adicionar saldo na carteira
-- Remover saldo da carteira
-- Consultar o valor disponível
+### 👤 Gestão de Clientes
+- Cadastro de clientes
+- Consulta de clientes por ID
+- Consulta de clientes por data de nascimento
+- Controle de saldo por carteira
 
-### Controle de Veículos
-- Cadastro de veiculos
-- Exibição dos dados de veículos
-- Controle de disponibilidade do veículo
-- Cálculo do valor final de venda
+### 🚘 Controle de Estoque
+- Cadastro de veículos
+- Remoção de veículos do estoque
+- Identificação de veículos por ID
+
+### 💰 Controle de Vendas
+- Realização de vendas
+- Validação de saldo do cliente antes da compra
+- Registro das vendas realizadas
+- Consulta de vendas por ID
+- Consulta de vendas por data
+
 ---
 
-## Modelagem Orientada a Objetos
+## 🧠 Modelagem Orientada a Objetos
 
 O projeto foi desenvolvido com base em conceitos de Programação Orientada a Objetos (POO), utilizando:
 
 - Encapsulamento
-- Heranca
+- Herança
 - Polimorfismo
 - Interface
 
+### Onde cada conceito foi aplicado
+
+- **Encapsulamento**: utilizado por meio de atributos `private` e métodos `getters` e `setters`, protegendo os dados das classes.
+- **Herança**: aplicada nas classes `Cliente`, que herda de `Pessoa`, e `Carro` e `Moto`, que herdam de `Veiculo`.
+- **Polimorfismo**: aplicado no método `calcularValorFinal()`, que possui implementações diferentes nas classes `Carro` e `Moto`.
+- **Interface**: utilizada com `Comercializavel`, que define comportamentos comuns para os veículos comercializados.
+
 ---
 
-## Estrutura de Veículos
-A modelagem de veículos foi organizada da seguinte forma:
+## 🏗️ Estrutura do Projeto
 
-- `Veiculo`: classe abstrata com os dados e comportamentos comuns
+A organização principal do sistema foi dividida da seguinte forma:
+
+- `Pessoa`: classe base com os dados comuns de uma pessoa
+- `Cliente`: herda de `Pessoa` e possui carteira própria
+- `Carteira`: responsável pelo controle do saldo do cliente
+- `Veiculo`: classe abstrata com os dados e comportamentos comuns dos veículos
 - `Carro`: classe filha de `Veiculo`
 - `Moto`: classe filha de `Veiculo`
 - `Comercializavel`: interface implementada por `Veiculo`
+- `controleClientes`: responsável pelo gerenciamento dos clientes
+- `controleEstoque`: responsável pelo gerenciamento do estoque de veículos
+- `ControleVendas`: responsável pelo fluxo de vendas
+- `Venda`: responsável pelo registro das vendas realizadas
 
 ---
 
-## Tecnologias Utilizadas
-- Java 
+## 💻 Tecnologias Utilizadas
+
+- Java
 - Programação Orientada a Objetos
 - IntelliJ IDEA
+- Git
+- GitHub
 - Terminal / CLI
+
+---
+
+## ▶️ Execução do Projeto
+
+O projeto é executado em ambiente de terminal, onde são realizados testes de cadastro de clientes, cadastro de veículos, controle de estoque e registro de vendas.
+
+---
+
+## 📌 Status do Projeto
+
+Projeto em desenvolvimento.

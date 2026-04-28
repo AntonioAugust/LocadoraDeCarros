@@ -3,52 +3,55 @@
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)
 
-Uma solução desenvolvida em **Java** para controle de fluxo de clientes, gestão de estoque e operações financeiras de uma concessionária.
+Uma aplicação desenvolvida em Java para auxiliar no controle de veículos, clientes e operações básicas de uma concessionária.
 
 ---
-
 
 ## 👥 Integrantes do Projeto
 
 * **Antonio Augusto**
 * **Artur Antunes** 
 * **Eduardo Liscano Guerra**
-* **Julielen Arnoud Dorneles**
+* **Julielen Dorneles**
 ---
 
 ## ⚙️ Funcionalidades do Sistema
 
-O sistema foi estruturado para oferecer um gerenciamento centralizado em três pilares principais:
+### Gestao Financeira
+- Adicionar saldo na carteira
+- Remover saldo da carteira
+- Consultar o valor disponível
 
-### 👤 Gestão de Clientes
-* **Adicionar Cliente:** Cadastra novos perfis no sistema.
-* **Remover Cliente:** Exclui registros de clientes do banco de dados.
-* **Consultar Cliente:** Visualiza informações detalhadas de um cadastro específico.
-* **Gerenciar Saldo:** Fluxo de adição e remoção de créditos para transações.
+### Controle de Veículos
+- Cadastro de veiculos
+- Exibição dos dados de veículos
+- Controle de disponibilidade do veículo
+- Cálculo do valor final de venda
+---
 
-### 🚘 Controle de Estoque
-* **Adicionar Veículo:** Entrada de novos carros no catálogo.
-* **Remover Veículo:** Baixa manual de itens do inventário.
-* **Consultar Estoque:** Exibição da lista completa de veículos disponíveis.
+## Modelagem Orientada a Objetos
 
-### 💰 Operações Comerciais
-* **Comprar Carro:** Registra a venda de um veículo e desconta do saldo.
-* **Pagar Parcela:** Processa pagamentos de financiamentos ativos.
-* **Checar Parcelas:** Monitora o status (Pendente/Pago) de cada prestação.
+O projeto foi desenvolvido com base em conceitos de Programação Orientada a Objetos (POO), utilizando:
+
+- Encapsulamento
+- Heranca
+- Polimorfismo
+- Interface
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Estrutura de Veículos
+A modelagem de veículos foi organizada da seguinte forma:
 
-* **Linguagem:** Java ☕
-* **Paradigma:** Orientação a Objetos (POO)
-Uso de Herança, Polimorfismo e Interface
-* **Interface:** Terminal / CLI
+- `Veiculo`: classe abstrata com os dados e comportamentos comuns
+- `Carro`: classe filha de `Veiculo`
+- `Moto`: classe filha de `Veiculo`
+- `Comercializavel`: interface implementada por `Veiculo`
 
 ---
 
-## 🚀 Como executar o projeto
-
-1. **Clone o repositório:**
-   ```bash
-   git clone [https://github.com/AntonioAugust/LocadoraDeCarros.git](https://github.com/AntonioAugust/LocadoraDeCarros.git)
+## Tecnologias Utilizadas
+- Java 
+- Programação Orientada a Objetos
+- IntelliJ IDEA
+- Terminal / CLI

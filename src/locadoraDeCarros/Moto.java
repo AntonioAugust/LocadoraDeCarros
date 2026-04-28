@@ -2,20 +2,19 @@ package locadoraDeCarros;
 
 /**
  * Classe que representa uma moto dentro do estoque.
- * Assim como o carro, a moto também herda da classe Veiculo. Isso evita
- * repetição de código, já que os dados principais ficam todos na classe mãe.
+ * Assim como o carro, a moto tambem herda da classe Veiculo.
  */
-
 public class Moto extends Veiculo {
     private int cilindradas;
 
     /**
      * Construtor da classe Moto.
+     *
      * @param marca marca da moto
      * @param modelo modelo da moto
      * @param anoFabricacao ano de fabricacao da moto
      * @param placa placa da moto
-     * @param preco preco da moto
+     * @param preco preco base da moto
      * @param cor cor da moto
      * @param cilindradas quantidade de cilindradas da moto
      */
@@ -44,7 +43,7 @@ public class Moto extends Veiculo {
     public String exibirDados() {
         return super.exibirDados() +
                 "\nTipo: Moto" +
-                "\nCilindradas: " + cilindradas +
+                "\nCilindradas: " + getCilindradas() +
                 "\nValor final: R$ " + calcularValorFinal();
     }
     public int getCilindradas() {

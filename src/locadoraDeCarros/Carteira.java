@@ -12,6 +12,12 @@ public class Carteira {
      * @param quantidade valor que sera depositado na carteira
      */
 
+
+    public Carteira(double dinheiroInicial){
+        this.dinheiro = dinheiroInicial;
+    }
+
+
     public void Depositar(double quantidade){
         if(quantidade > 0) {
             this.dinheiro += quantidade;

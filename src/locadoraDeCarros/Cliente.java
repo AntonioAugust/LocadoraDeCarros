@@ -1,23 +1,15 @@
 package locadoraDeCarros;
 
+import java.time.LocalDate;
+
 /**
  * Classe que representa um cliente do sistema.
  * Ela armazena os dados pessoais do cliente e a sua carteira.
  */
-public class Cliente {
-    private int cpf;
-    private String nome;
-    private String endereco;
-    private Carteira carteira; // 👈 nova associação
+public class Cliente extends Pessoa{
 
-    /**
-     * Associa uma carteira ao cliente.
-     *
-     * @param carteira carteira do cliente
-     */
-    public void setCarteira(Carteira carteira){
-        this.carteira = carteira;
-    }
+    private int idCliente;
+    private Carteira carteira;
 
     /**
      * Retorna a carteira do cliente.
@@ -28,51 +20,28 @@ public class Cliente {
         return carteira;
     }
 
-    public int getCpf(){
-        return cpf;
+    public int getIdCliente(){
+        return  this.idCliente;
     }
 
-    public void setCpf(int cpf){
-        this.cpf = cpf;
+    public Cliente(String nomeCompleto, String cpf, String endereco, LocalDate nascimentoData, int idCliente, double dinheiroIncial){
+        super(nomeCompleto, cpf, endereco, nascimentoData);
+        this.idCliente = idCliente;
+        this.carteira = new Carteira(dinheiroIncial);
     }
 
-    public String getNome(){
-        return nome;
+    @Override
+    public String toString() {
+        return "=== Dados do Cliente ===" +
+                "\nID Cliente: " + idCliente +
+                "\nNome: " + getNomeCompleto() +
+                "\nCPF: " + getCpf() +
+                "\nEndereço: " + getEndereco() +
+                "\nDataNascimento: " + getNascimentoData() +
+                "\n------------------------" +
+                "\n[Carteira]" +
+                "\nSaldo Atual: R$ " + String.format("%.2f", carteira.getDinheiro()) +
+                "\n========================";
     }
 
-    public void setNome(String nome){
-        this.nome = nome;
-    }
-
-    public String getEndereco(){
-        return endereco;
-    }
-
-    public void setEndereco(String endereco){
-        this.endereco = endereco;
-    }
-
-    /**
-     * Construtor da classe Cliente.
-     *
-     * @param cpf cpf do cliente
-     * @param nome nome do cliente
-     * @param endereco endereco do cliente
-     * @param carteira carteira do cliente
-     * @param dinheiroInicial saldo inicial da carteira
-     */
-    public Cliente(int cpf, String nome, String endereco, Carteira carteira, double dinheiroInicial){
-        setCpf(cpf);
-        setNome(nome);
-        setEndereco(endereco);
-        setCarteira(carteira);
-        carteira.Depositar(dinheiroInicial);
-    }
-
-    /**
-     * Mostra as informacoes do cliente.
-     */
-    public void mostarInfoCliente(){
-        System.out.println("------ INFORMAÇÕES DO CLIENTE ------\nNome: " + getNome() + "\nEndereço: " + getEndereco() + "\nCPF: " + getCpf() +"\nSaldo atual: " + carteira.getDinheiro());
-    }
 }

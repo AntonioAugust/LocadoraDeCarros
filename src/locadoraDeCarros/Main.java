@@ -1,82 +1,35 @@
 package locadoraDeCarros;
+import java.time.LocalDate;
 
 public class Main {
+
     public static void main() {
-        System.out.println("======================================");
-        System.out.println("         TESTE CLIENTE");
-        System.out.println("======================================");
-        Cliente cliente1 = new Cliente(123456789, "João", "Rua A", new Carteira(), 150000);
-        cliente1.mostarInfoCliente();
-        System.out.println();
+        // Inicializa o gerenciador
+        controleClientes gestor = new controleClientes();
 
-        System.out.println("======================================");
-        System.out.println("         TESTE DA CARTEIRA");
-        System.out.println("======================================");
+        System.out.println("--- Cadastrando Clientes ---");
 
-        System.out.println("Dinheiro inicial do cliente: " + cliente1.getCarteira().getDinheiro());
+        // Adicionando alguns clientes de teste
+        gestor.addCliente("Fulano de Tal", "123.456.789-00", "Rua A, 123",
+                LocalDate.of(1995, 5, 20), 500.00);
 
-        cliente1.getCarteira().Depositar(100);
-        cliente1.getCarteira().Remover(50);
+        gestor.addCliente("Ciclana Souza", "987.654.321-11", "Av. Central, 50",
+                LocalDate.of(1988, 11, 10), 1250.50);
 
-        System.out.println("Dinheiro após operações: " + cliente1.getCarteira().getDinheiro());
-        System.out.println();
+        // 1. Ver um cliente específico (ID 1)
+        System.out.println("\nVisualizando Cliente ID 1:");
+        gestor.verCliente(1);
 
-        System.out.println("======================================");
-        System.out.println("          TESTE DE HERANCA");
-        System.out.println("======================================");
+        // 2. Ver o outro cliente (ID 2)
+        System.out.println("\nVisualizando Cliente ID 2:");
+        gestor.verCliente(2);
 
-        Carro carro1 = new Carro("Toyota", "Corolla", 2022, "ABC-1234", 100000, "Prata", 4);
-        Moto moto1 = new Moto("Honda", "CG 160", 2023, "XYZ-5678", 20000, "Preta", 160);
+        // 3. Removendo um cliente
+        System.out.println("\n--- Removendo Cliente ID 1 ---");
+        gestor.removerCliente(1);
 
-        System.out.println("---------- DADOS DO CARRO ----------");
-        System.out.println(carro1.exibirDados());
-        System.out.println();
-
-        System.out.println("---------- DADOS DA MOTO -----------");
-        System.out.println(moto1.exibirDados());
-        System.out.println();
-
-        System.out.println("======================================");
-        System.out.println("        TESTE DE POLIMORFISMO");
-        System.out.println("======================================");
-
-        Veiculo veiculo1 = new Carro("Hyundai", "HB20", 2021, "DEF-4321", 80000, "Branco", 4);
-        Veiculo veiculo2 = new Moto("Yamaha", "Fazer 250", 2022, "GHI-8765", 25000, "Azul", 250);
-
-        System.out.println("Veiculo 1 - valor final: R$ " + veiculo1.calcularValorFinal());
-        System.out.println("Veiculo 2 - valor final: R$ " + veiculo2.calcularValorFinal());
-        System.out.println();
-
-        System.out.println("======================================");
-        System.out.println("   TESTE DA INTERFACE COMERCIALIZAVEL");
-        System.out.println("======================================");
-
-        Comercializavel item = new Carro("Chevrolet", "Onix", 2020, "JKL-1111", 70000, "Preto", 4);
-
-        System.out.println("Valor final para venda: R$ " + item.calcularValorFinal());
-        System.out.println("Dinheiro antes da compra: " + cliente1.getCarteira().getDinheiro());
-        item.vender(cliente1);
-        System.out.println("Dinheiro do cliente após compra: " + cliente1.getCarteira().getDinheiro());
-        System.out.println();
-
-        System.out.println("======================================");
-        System.out.println("           TESTE DE VENDA");
-        System.out.println("======================================");
-
-        System.out.println("Dinheiro antes da compra: " + cliente1.getCarteira().getDinheiro());
-        System.out.println();
-
-        System.out.println("---------- ANTES DA VENDA ----------");
-        System.out.println(carro1.exibirDados());
-        System.out.println();
-
-        carro1.vender(cliente1);
-        System.out.println();
-
-        System.out.println("Dinheiro depois da compra: " + cliente1.getCarteira().getDinheiro());
-        System.out.println();
-
-        System.out.println("---------- DEPOIS DA VENDA ---------");
-        System.out.println(carro1.exibirDados());
+        // 4. Tentando ver o cliente removido para testar
+        System.out.println("\nTentando visualizar ID 1 após remoção:");
+        gestor.verCliente(1);
     }
 }

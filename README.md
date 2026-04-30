@@ -51,7 +51,7 @@ O projeto foi desenvolvido com base em conceitos de Programação Orientada a Ob
 
 - **Encapsulamento**: utilizado por meio de atributos `private` e métodos `getters` e `setters`, protegendo os dados das classes.
 - **Herança**: aplicada nas classes `Cliente`, que herda de `Pessoa`, e `Carro` e `Moto`, que herdam de `Veiculo`.
-- **Polimorfismo**: aplicado no método `calcularValorFinal()`, que possui implementações diferentes nas classes `Carro` e `Moto`.
+- **Polimorfismo**: aplicado na exibição dos dados dos veículos, já que objetos das classes `Carro` e `Moto` podem ser tratados como `Veiculo`, mas cada um mantém suas características próprias.
 - **Interface**: utilizada com `Comercializavel`, que define comportamentos comuns para os veículos comercializados.
 
 ---

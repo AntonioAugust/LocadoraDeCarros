@@ -8,7 +8,7 @@ public interface Comercializavel{
 
     /**
      * Calcula o valor final de venda.
-     * Cada tipo de veiculo pode calcular esse valor do seu proprio jeito.
+     * Cada tipo de veículo pode calcular esse valor do seu prprio jeito.
      *
      * @return valor final de venda
      */

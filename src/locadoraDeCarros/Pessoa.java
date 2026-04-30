@@ -26,7 +26,6 @@ abstract class Pessoa {
         return endereco;
     }
 
-
     public LocalDate getNascimentoData() {
         return nascimentoData;
     }

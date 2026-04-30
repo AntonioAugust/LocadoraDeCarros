@@ -3,7 +3,8 @@ import java.time.LocalDate;
 
 public class Main {
 
-    public static void main() {
+    public static void main(String[] args) {
+
         // 1. Inicializa os Gerenciadores
         ControleClientes gestorClientes = new ControleClientes();
         ControleEstoque gestorEstoque = new ControleEstoque();

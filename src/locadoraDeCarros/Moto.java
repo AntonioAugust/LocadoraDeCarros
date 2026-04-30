@@ -25,12 +25,6 @@ public class Moto extends Veiculo {
         this.cilindradas = cilindradas;
     }
 
-    /**
-     * Calcula o valor final da moto.
-     * Para a moto, usamos uma taxa menor que a do carro, de 3% sobre o valor base
-     * @return valor final da moto
-     */
-
     @Override
     public String getTipo(){
         return "Moto";

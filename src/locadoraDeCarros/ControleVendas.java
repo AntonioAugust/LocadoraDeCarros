@@ -22,6 +22,7 @@ public class ControleVendas {
             return;
         }
 
+        double valorVenda = veiculo.getPreco();
 
         if(cliente.getCarteira().getDinheiro() < valorVenda){
             System.out.println("ERRO: Saldo insuficiente! Saldo: " + cliente.getCarteira().getDinheiro() + " | Necessário: " + valorVenda);

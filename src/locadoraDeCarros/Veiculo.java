@@ -10,7 +10,6 @@ public abstract class Veiculo {
     private LocalDate anoFabricacao;
     private double precoBase;
 
-
     public Veiculo(String marca, String modelo, String placa, String cor, LocalDate anoFabricacao, double precoBase) {
         this.marca = marca;
         this.modelo = modelo;

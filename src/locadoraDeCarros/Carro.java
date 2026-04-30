@@ -18,7 +18,6 @@ public class Carro extends Veiculo {
      * @param modelo modelo do carro
      * @param anoFabricacao ano de fabricacao do carro
      * @param placa placa do carro
-
      * @param cor cor do carro
      * @param quantidadePortas quantidade de portas do carro
      */
@@ -26,14 +25,6 @@ public class Carro extends Veiculo {
         super(marca, modelo, placa, cor, anoFabricacao, precoBase);
         this.quantidadePortas = quantidadePortas;
     }
-
-    /**
-     * Calcula o valor final do carro.
-     * Para diferenciar os tipos de veiculos, usamos uma pequena taxa sobre
-     * o valor base. No caso do carro, foi usada uma taxa de 5%.
-     *
-     * @return valor final do carro
-     */
 
     @Override
     public String getTipo(){

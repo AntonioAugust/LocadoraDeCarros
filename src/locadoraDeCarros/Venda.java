@@ -1,7 +1,6 @@
 package locadoraDeCarros;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Venda {
     private int idVenda;
@@ -18,7 +17,7 @@ public class Venda {
         this.formaPagamento = formaPagamento;
         this.data = LocalDate.now();
 
-        this.valorFinal = veiculo.calcularValorFinal();
+        this.valorFinal = veiculo.getPreco();
 
         this.snapshotVeiculo = veiculo.toString();
 

@@ -51,8 +51,8 @@ O projeto foi desenvolvido com base em conceitos de Programação Orientada a Ob
 
 - **Encapsulamento**: utilizado por meio de atributos `private` e métodos `getters` e `setters`, protegendo os dados das classes.
 - **Herança**: aplicada nas classes `Cliente`, que herda de `Pessoa`, e `Carro` e `Moto`, que herdam de `Veiculo`.
-- **Polimorfismo**: aplicado no método `calcularValorFinal()`, que possui implementações diferentes nas classes `Carro` e `Moto`.
-- **Interface**: utilizada com `Comercializavel`, que define comportamentos comuns para os veículos comercializados.
+- **Polimorfismo**: aplicado na exibição dos dados dos veículos, já que objetos das classes `Carro` e `Moto` podem ser tratados como `Veiculo`, mas cada um mantém suas características próprias.
+- **Interface**: utilizada para definir comportamentos comuns entre classes do sistema, permitindo padronizar a exibição de informações.
 
 ---
 
@@ -66,7 +66,6 @@ A organização principal do sistema foi dividida da seguinte forma:
 - `Veiculo`: classe abstrata com os dados e comportamentos comuns dos veículos
 - `Carro`: classe filha de `Veiculo`
 - `Moto`: classe filha de `Veiculo`
-- `Comercializavel`: interface implementada por `Veiculo`
 - `ControleClientes`: responsável pelo gerenciamento dos clientes
 - `ControleEstoque`: responsável pelo gerenciamento do estoque de veículos
 - `ControleVendas`: responsável pelo fluxo de vendas

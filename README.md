@@ -66,7 +66,6 @@ A organização principal do sistema foi dividida da seguinte forma:
 - `Veiculo`: classe abstrata com os dados e comportamentos comuns dos veículos
 - `Carro`: classe filha de `Veiculo`
 - `Moto`: classe filha de `Veiculo`
-- `Comercializavel`: interface implementada por `Veiculo`
 - `ControleClientes`: responsável pelo gerenciamento dos clientes
 - `ControleEstoque`: responsável pelo gerenciamento do estoque de veículos
 - `ControleVendas`: responsável pelo fluxo de vendas

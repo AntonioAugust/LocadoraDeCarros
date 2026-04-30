@@ -6,9 +6,9 @@ import java.util.List;
 public class ControleVendas {
     private int proximoId;
     private List<Venda> listaVendas;
-    private controleEstoque estoque;
+    private ControleEstoque estoque;
 
-    public ControleVendas(controleEstoque estoque){
+    public ControleVendas(ControleEstoque estoque){
         listaVendas = new ArrayList<>();
         this.estoque = estoque;
         proximoId = 1;
@@ -22,7 +22,6 @@ public class ControleVendas {
             return;
         }
 
-        double valorVenda = veiculo.calcularValorFinal();
 
         if(cliente.getCarteira().getDinheiro() < valorVenda){
             System.out.println("ERRO: Saldo insuficiente! Saldo: " + cliente.getCarteira().getDinheiro() + " | Necessário: " + valorVenda);
@@ -57,6 +56,4 @@ public class ControleVendas {
             }
         }
     }
-
-
 }

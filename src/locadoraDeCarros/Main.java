@@ -5,8 +5,8 @@ public class Main {
 
     public static void main() {
         // 1. Inicializa os Gerenciadores
-        controleClientes gestorClientes = new controleClientes();
-        controleEstoque gestorEstoque = new controleEstoque();
+        ControleClientes gestorClientes = new ControleClientes();
+        ControleEstoque gestorEstoque = new ControleEstoque();
         // O ControleVendas precisa conhecer o estoque para validar os veículos
         ControleVendas gestorVendas = new ControleVendas(gestorEstoque);
 

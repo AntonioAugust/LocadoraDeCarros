@@ -30,10 +30,6 @@ public class Moto extends Veiculo {
      * Para a moto, usamos uma taxa menor que a do carro, de 3% sobre o valor base
      * @return valor final da moto
      */
-    @Override
-    public double calcularValorFinal() {
-        return getPreco() + (getPreco()* 0.03);
-    }
 
     @Override
     public String getTipo(){

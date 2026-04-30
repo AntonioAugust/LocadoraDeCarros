@@ -34,10 +34,6 @@ public class Carro extends Veiculo {
      *
      * @return valor final do carro
      */
-    @Override
-    public double calcularValorFinal() {
-        return getPreco() + (getPreco() * 0.05);
-    }
 
     @Override
     public String getTipo(){

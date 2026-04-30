@@ -4,43 +4,42 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class controleClientes {
+public class ControleClientes {
 
-    private List<Cliente> controleClientes;
+    private List<Cliente> ControleClientes;
 
     private int proximoId;
 
-    public controleClientes(){
-        controleClientes = new ArrayList<>();
+    public ControleClientes(){
+        ControleClientes = new ArrayList<>();
         proximoId = 0;
     }
 
     public void addCliente(String nomeCompleto, String cpf, String endereco, LocalDate nascimentoData, double dinheiroIncial){
         proximoId++;
-        controleClientes.add(new Cliente(nomeCompleto, cpf, endereco, nascimentoData, proximoId, dinheiroIncial));
+        ControleClientes.add(new Cliente(nomeCompleto, cpf, endereco, nascimentoData, proximoId, dinheiroIncial));
     }
 
     public void removerCliente(int idCliente) {
-        for (Cliente v : controleClientes) {
-            if (controleClientes.isEmpty()) return;
+        for (Cliente v : ControleClientes) {
+            if (ControleClientes.isEmpty()) return;
             if (v.getIdCliente() == idCliente) {
                 System.out.println(v);
-                controleClientes.remove(v);
+                ControleClientes.remove(v);
                 return;
             }
         }
     }
 
     public Cliente getCliente(int id) {
-        for (Cliente c : controleClientes) {
+        for (Cliente c : ControleClientes) {
             if (c.getIdCliente() == id) return c;
         }
         return null;
     }
 
-
     public void verCliente(int idCliente){
-        for(Cliente v : controleClientes){
+        for(Cliente v : ControleClientes){
             if(v.getIdCliente() == idCliente){
                 System.out.println(v);
                 return;
@@ -49,12 +48,11 @@ public class controleClientes {
     }
 
     public void verCliente(LocalDate date){
-        for(Cliente v : controleClientes){
+        for(Cliente v : ControleClientes){
             if(date.isEqual(v.getNascimentoData())){
                 System.out.println(v);
             }
         }
     }
-
 
 }

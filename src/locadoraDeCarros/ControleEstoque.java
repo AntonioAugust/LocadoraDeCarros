@@ -1,30 +1,29 @@
 package locadoraDeCarros;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class controleEstoque {
-    private List<Veiculo> controleEstoque;
+public class ControleEstoque {
+    private List<Veiculo> ControleEstoque;
     private int proximoId;
 
-    public controleEstoque(){
-        controleEstoque = new ArrayList<>();
+    public ControleEstoque(){
+        ControleEstoque = new ArrayList<>();
         proximoId = 0;
     }
 
     public void addVeiculo(Veiculo veiculo){
         proximoId++;
         veiculo.setIdVeiculo(proximoId);
-        controleEstoque.add(veiculo);
+        ControleEstoque.add(veiculo);
     }
 
     public Veiculo removerVeiculo(int idVeiculo) {
-        for (Veiculo v : controleEstoque) {
-            if (controleEstoque.isEmpty()) return null;
+        for (Veiculo v : ControleEstoque) {
+            if (ControleEstoque.isEmpty()) return null;
             if (v.getIdVeiculo() == idVeiculo) {
                 //System.out.println(v);
-                controleEstoque.remove(v);
+                ControleEstoque.remove(v);
                 return v;
             }
         }

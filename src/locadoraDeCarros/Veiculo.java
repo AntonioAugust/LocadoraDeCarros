@@ -1,8 +1,7 @@
 package locadoraDeCarros;
 import java.time.LocalDate;
 
-
-public abstract class Veiculo implements Comercializavel {
+public abstract class Veiculo {
     private int idVeiculo;
     private String marca;
     private String modelo;
@@ -13,7 +12,6 @@ public abstract class Veiculo implements Comercializavel {
 
 
     public Veiculo(String marca, String modelo, String placa, String cor, LocalDate anoFabricacao, double precoBase) {
-        //this.idVeiculo = idVeiculo;
         this.marca = marca;
         this.modelo = modelo;
         this.placa = placa;
@@ -22,23 +20,17 @@ public abstract class Veiculo implements Comercializavel {
         this.precoBase = precoBase;
     }
 
-
     @Override
     public String toString() {
         return String.format("ID: %d | %s %s | Placa: %s | Cor: %s",
                 idVeiculo, marca, modelo, placa, cor);
     }
 
-
-    @Override
-    public abstract double calcularValorFinal();
-
     public abstract String getTipo();
 
-    public double getPreco(){
+    public double getPreco() {
         return precoBase;
     }
-
 
     public String getMarca() {
         return marca;
@@ -59,8 +51,9 @@ public abstract class Veiculo implements Comercializavel {
     public LocalDate getAnoFabricacao() {
         return anoFabricacao;
     }
-    public int getIdVeiculo(){
-        return  idVeiculo;
+
+    public int getIdVeiculo() {
+        return idVeiculo;
     }
 
     public void setMarca(String marca) {
@@ -83,7 +76,7 @@ public abstract class Veiculo implements Comercializavel {
         this.anoFabricacao = anoFabricacao;
     }
 
-    public void setIdVeiculo(int idVeiculo){
+    public void setIdVeiculo(int idVeiculo) {
         this.idVeiculo = idVeiculo;
     }
 }

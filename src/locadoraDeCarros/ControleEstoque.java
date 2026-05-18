@@ -1,31 +1,40 @@
 package locadoraDeCarros;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ControleEstoque {
-    private List<Veiculo> ControleEstoque;
+    private List<itemEstoque> controleEstoque;
     private int proximoId;
 
     public ControleEstoque(){
-        ControleEstoque = new ArrayList<>();
+        controleEstoque = new ArrayList<>();
         proximoId = 0;
     }
 
-    public void addVeiculo(Veiculo veiculo){
+    public void addEstoque(Veiculo veiculo, double preco){
         proximoId++;
-        veiculo.setIdVeiculo(proximoId);
-        ControleEstoque.add(veiculo);
-        System.out.println("✓ " + veiculo.getTipo() + " adicionado ao estoque - ID: " + veiculo.getIdVeiculo() + " | Disponível: " + veiculo.isDisponivel());
+        controleEstoque.add(new itemEstoque(veiculo, preco, proximoId));
     }
 
-    public Veiculo removerVeiculo(int idVeiculo) {
-        for (Veiculo v : ControleEstoque) {
-            if (ControleEstoque.isEmpty()) return null;
-            if (v.getIdVeiculo() == idVeiculo) {
+    public itemEstoque removerEstoque(int itemId) {
+        for (itemEstoque v : controleEstoque) {
+            if (controleEstoque.isEmpty()) return null;
+            if (v.getIdItem() == itemId) {
                 //System.out.println(v);
-                ControleEstoque.remove(v);
+                controleEstoque.remove(v);
                 return v;
+            }
+        }
+        return null;
+    }
+
+    public itemEstoque buscarPorId(int id){
+
+        for(itemEstoque item : controleEstoque){
+            if(item.getIdItem() == id){
+                return item;
             }
         }
         return null;

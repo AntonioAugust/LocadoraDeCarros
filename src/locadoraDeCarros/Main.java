@@ -5,11 +5,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        controleClientes clientes =
-                new controleClientes();
+        ControleClientes clientes =
+                new ControleClientes();
 
-        controleEstoque estoque =
-                new controleEstoque();
+        ControleEstoque estoque =
+                new ControleEstoque();
 
         ControleVendas vendas =
                 new ControleVendas(estoque);
@@ -29,7 +29,7 @@ public class Main {
     // =========================
 
     private static void cadastrarClientes(
-            controleClientes clientes) {
+            ControleClientes clientes) {
 
         clientes.addCliente(
                 "Fulano de Tal",
@@ -51,7 +51,7 @@ public class Main {
     // =========================
 
     private static void cadastrarVeiculos(
-            controleEstoque estoque) {
+            ControleEstoque estoque) {
 
         Veiculo corolla =
                 new Carro(
@@ -110,7 +110,7 @@ public class Main {
     // =========================
 
     private static void mostrarResumo(
-            controleClientes clientes,
+            ControleClientes clientes,
             ControleVendas vendas) {
 
         System.out.println(

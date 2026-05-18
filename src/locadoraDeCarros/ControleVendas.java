@@ -6,9 +6,9 @@ import java.util.List;
 public class ControleVendas {
     private int proximoId;
     private List<Venda> listaVendas;
-    private controleEstoque estoque;
+    private ControleEstoque estoque;
 
-    public ControleVendas(controleEstoque estoque){
+    public ControleVendas(ControleEstoque estoque){
         listaVendas = new ArrayList<>();
         this.estoque = estoque;
         proximoId = 1;
@@ -30,7 +30,7 @@ public class ControleVendas {
         }
         estoque.removerEstoque(item.getIdItem());
 
-        cliente.getCarteira().Remover(valorVenda);
+        cliente.getCarteira().remover(valorVenda);
 
         listaVendas.add(novaVenda);
         proximoId++;

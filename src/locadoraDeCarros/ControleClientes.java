@@ -4,13 +4,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class controleClientes {
+public class ControleClientes {
 
     private List<Cliente> controleClientes;
 
     private int proximoId;
 
-    public controleClientes(){
+    public ControleClientes(){
         controleClientes = new ArrayList<>();
         proximoId = 0;
     }

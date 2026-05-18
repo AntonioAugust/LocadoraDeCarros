@@ -14,7 +14,7 @@ public class Carteira {
     }
 
 
-    public void Depositar(double quantidade){
+    public void depositar(double quantidade){
         if(quantidade > 0) {
             this.dinheiro += quantidade;
         }
@@ -27,7 +27,7 @@ public class Carteira {
      *
      * @param quantidade valor que sera removido da carteira
      */
-    public void Remover(double quantidade){
+    public void remover(double quantidade){
         if((this.dinheiro - quantidade) >= 0){
             this.dinheiro -= quantidade;
         }
